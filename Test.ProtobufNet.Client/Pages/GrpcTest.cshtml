@@ -1,0 +1,20 @@
+﻿@page
+@model Test.ProtobufNet.Pages.GrpcTestModel
+@inject Test.ProtobufNet.Protobuf.IRpcService rpc
+@{
+    var model = await rpc.GetModel();
+    var value = await rpc.GetModelString();
+    var s = await rpc.GetString();
+}
+
+<p>
+    @(System.Text.Json.JsonSerializer.Serialize(model));
+</p>
+
+<p>
+    @(System.Text.Json.JsonSerializer.Serialize(value));
+</p>
+
+<p>
+    @(s)
+</p>
