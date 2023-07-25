@@ -49,5 +49,6 @@ namespace Test.ProtobufNet.Grpc
         public DateTimeOffset GetDateTimeOffset(DateTimeOffset dateTimeOffset) => dateTimeOffset;
         public DateOnly GetDateOnly(DateOnly date) => date;
         public TimeOnly GetTimeOnly(TimeOnly time) => time;
+        public string MultiParams(bool b, int i) => $"{b}+{i}";
     }
 }

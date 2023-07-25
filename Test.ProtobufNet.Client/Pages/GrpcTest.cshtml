@@ -17,7 +17,7 @@
 
 <h4>IEnumerable&lt;Guid&gt;</h4>
 <p>
-    @(JsonSerializer.Serialize( rpc.GetEnumerableGuid()))
+    @(JsonSerializer.Serialize(rpc.GetEnumerableGuid()))
 </p>
 
 <h4>Null</h4>
@@ -63,4 +63,9 @@
 <h4>TimeOnly</h4>
 <p>
     @(rpc.GetTimeOnly(TimeOnly.MaxValue))
+</p>
+
+<h4>MultiParams</h4>
+<p>
+    @(rpc.MultiParams(true, 123))
 </p>
