@@ -7,15 +7,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
+		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.55.0" />
+		<PackageReference Include="protobuf-net" Version="3.2.26" />
+		<PackageReference Include="ZGabi.protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="wwwroot\" />
+		<Folder Include="wwwroot\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Test.ProtobufNet.Protobuf\Test.ProtobufNet.Protobuf.csproj" />
+		<ProjectReference Include="..\Test.ProtobufNet.Protobuf\Test.ProtobufNet.Protobuf.csproj" />
 	</ItemGroup>
 
 </Project>

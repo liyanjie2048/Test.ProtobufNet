@@ -1,6 +1,11 @@
 using ProtoBuf.Grpc.ClientFactory;
+using ProtoBuf.Meta;
 
 using Test.ProtobufNet.Protobuf;
+
+RuntimeTypeModel.Default.AddDateTimeOffsetSurrogate();
+RuntimeTypeModel.Default.AddDateOnlySurrogate();
+RuntimeTypeModel.Default.AddTimeOnlySurrogate();
 
 ProtoBuf.Grpc.Client.GrpcClientFactory.AllowUnencryptedHttp2 = true;
 

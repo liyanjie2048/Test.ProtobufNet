@@ -1,20 +1,66 @@
 ﻿@page
+@using System.Text.Json
 @model Test.ProtobufNet.Pages.GrpcTestModel
 @inject Test.ProtobufNet.Protobuf.IRpcService rpc
 @{
-    var model = await rpc.GetModel();
-    var value = await rpc.GetModelString();
-    var s = await rpc.GetString();
 }
 
+<h4>Model</h4>
 <p>
-    @(System.Text.Json.JsonSerializer.Serialize(model));
+    @(JsonSerializer.Serialize(rpc.GetModel()))
 </p>
 
+<h4>Model`String</h4>
 <p>
-    @(System.Text.Json.JsonSerializer.Serialize(value));
+    @(JsonSerializer.Serialize(rpc.GetModelString()))
 </p>
 
+<h4>IEnumerable&lt;Guid&gt;</h4>
 <p>
-    @(s)
+    @(JsonSerializer.Serialize( rpc.GetEnumerableGuid()))
+</p>
+
+<h4>Null</h4>
+<p>
+    @(rpc.GetNull().Value)
+</p>
+
+<h4>String</h4>
+<p>
+    @(rpc.GetString("123"))
+</p>
+
+<h4>Bool</h4>
+<p>
+    @(rpc.GetBool(true))
+</p>
+
+<h4>Decimal</h4>
+<p>
+    @(rpc.GetDecimal(6.66m))
+</p>
+
+<h4>Guid</h4>
+<p>
+    @(rpc.GetGuid(Guid.NewGuid()))
+</p>
+
+<h4>DateTime</h4>
+<p>
+    @(rpc.GetDateTime(DateTime.Now))
+</p>
+
+<h4>DateTimeOffset</h4>
+<p>
+    @(rpc.GetDateTimeOffset(DateTimeOffset.Now))
+</p>
+
+<h4>DateOnly</h4>
+<p>
+    @(rpc.GetDateOnly(DateOnly.MaxValue))
+</p>
+
+<h4>TimeOnly</h4>
+<p>
+    @(rpc.GetTimeOnly(TimeOnly.MaxValue))
 </p>

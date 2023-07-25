@@ -1,8 +1,13 @@
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 using ProtoBuf.Grpc.Server;
+using ProtoBuf.Meta;
 
 using Test.ProtobufNet.Grpc;
+
+RuntimeTypeModel.Default.AddDateTimeOffsetSurrogate();
+RuntimeTypeModel.Default.AddDateOnlySurrogate();
+RuntimeTypeModel.Default.AddTimeOnlySurrogate();
 
 var builder = WebApplication.CreateBuilder(args);
 

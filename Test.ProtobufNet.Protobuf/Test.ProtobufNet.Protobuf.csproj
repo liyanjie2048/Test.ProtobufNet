@@ -1,13 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Grpc.Core.Api" Version="2.55.0" />
+		<PackageReference Include="Liyanjie.Protobuf.Surrogates" Version="1.0.0" />
+		<PackageReference Include="protobuf-net" Version="3.2.26" />
+		<PackageReference Include="ZGabi.protobuf-net.Grpc" Version="1.1.1" />
+	</ItemGroup>
 
 </Project>
