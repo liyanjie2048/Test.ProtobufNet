@@ -17,6 +17,6 @@ namespace Test.ProtobufNet.Protobuf
         [Operation] DateTimeOffset GetDateTimeOffset(DateTimeOffset dateTimeOffset);
         [Operation] DateOnly GetDateOnly(DateOnly date);
         [Operation] TimeOnly GetTimeOnly(TimeOnly time);
-        [Operation] string MultiParams(bool b, int i);
+        [Operation] string MultiParams(bool b, int i, DateTimeOffset? s);
     }
 }
