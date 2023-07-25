@@ -22,12 +22,12 @@
 
 <h4>Null</h4>
 <p>
-    @(rpc.GetNull().Value)
+    Null:@(null == rpc.GetNull().Value)
 </p>
 
 <h4>Nullable</h4>
 <p>
-    @(rpc.GetNullable())
+    HasValue:@(rpc.GetNullable().HasValue)
 </p>
 
 <h4>String</h4>
