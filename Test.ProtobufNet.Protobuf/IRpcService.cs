@@ -9,6 +9,7 @@ namespace Test.ProtobufNet.Protobuf
         [Operation] Model<string> GetModelString();
         [Operation] IEnumerable<Guid> GetEnumerableGuid();
         [Operation] NullableResponse<Model> GetNull();
+        [Operation] double? GetNullable();
         [Operation] string GetString(string s);
         [Operation] bool GetBool(bool b);
         [Operation] decimal GetDecimal(decimal d);

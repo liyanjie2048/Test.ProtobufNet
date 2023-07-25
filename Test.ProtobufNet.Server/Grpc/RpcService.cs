@@ -41,6 +41,7 @@ namespace Test.ProtobufNet.Grpc
             return new[] { Guid.NewGuid() };
         }
         public NullableResponse<Model> GetNull() => (Model?)null;
+        public double? GetNullable() => null;
         public string GetString(string s) => s;
         public bool GetBool(bool b) => b;
         public decimal GetDecimal(decimal d) => d;
