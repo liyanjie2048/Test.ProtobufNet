@@ -7,9 +7,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Grpc.Core.Api" Version="2.55.0" />
 		<PackageReference Include="Liyanjie.Protobuf.Surrogates" Version="1.0.0" />
-		<PackageReference Include="protobuf-net" Version="3.2.26" />
+		<!--<PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />-->
 		<PackageReference Include="ZGabi.protobuf-net.Grpc" Version="1.1.1" />
 	</ItemGroup>
 

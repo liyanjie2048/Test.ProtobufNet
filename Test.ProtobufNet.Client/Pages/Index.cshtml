@@ -1,10 +1,103 @@
 ﻿@page
-@model IndexModel
+@using System.Text.Json
+@model Test.ProtobufNet.Pages.GrpcTestModel
+@inject Test.ProtobufNet.Protobuf.IRpcService rpc
 @{
-    ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h4>Model</h4>
+<p>
+    @(JsonSerializer.Serialize(rpc.GetModel()))
+</p>
+
+<h4>Model`String</h4>
+<p>
+    @(JsonSerializer.Serialize(rpc.GetModelString("ssssss")))
+</p>
+
+<h4>IEnumerable&lt;Guid&gt;</h4>
+<p>
+    @(JsonSerializer.Serialize(rpc.GetEnumerable(new[] { Guid.NewGuid() })))
+</p>
+
+<h4>IDictionary&lt;string,Guid&gt;</h4>
+<p>
+    @(JsonSerializer.Serialize(rpc.GetDictionary(new Dictionary<string, Guid>
+    {
+        ["A"] = Guid.NewGuid(),
+        ["B"] = Guid.NewGuid(),
+        ["C"] = Guid.NewGuid(),
+    })))
+</p>
+
+<h4>Null</h4>
+<p>
+    Null:@(null == rpc.GetNull().Value)
+</p>
+
+<h4>String</h4>
+<p>
+    @(rpc.GetString("123"))
+</p>
+
+<h4>String Nullable</h4>
+<p>
+    Null:@(null == rpc.GetString(null))
+    <br />
+    string.Empty:@(string.Empty == rpc.GetString(null))
+</p>
+
+<h4>Bool</h4>
+<p>
+    @(rpc.GetBool(true))
+</p>
+
+<h4>Double</h4>
+<p>
+    @(rpc.GetDouble(0.123456d))
+</p>
+
+<h4>Decimal</h4>
+<p>
+    @(rpc.GetDecimal(6.66m))
+</p>
+
+<h4>Guid</h4>
+<p>
+    @(rpc.GetGuid(Guid.NewGuid()))
+</p>
+
+<h4>DateTime</h4>
+<p>
+    @(rpc.GetDateTime(DateTime.Now))
+</p>
+
+<h4>DateTimeOffset</h4>
+<p>
+    @(rpc.GetDateTimeOffset(DateTimeOffset.Now))
+</p>
+
+<h4>DateOnly</h4>
+<p>
+    @(rpc.GetDateOnly(DateOnly.FromDateTime(DateTime.Now)))
+</p>
+
+<h4>DateOnly Nullable</h4>
+<p>
+    Null:@(rpc.GetDateOnly(null) is null)
+</p>
+
+<h4>TimeOnly</h4>
+<p>
+    @(rpc.GetTimeOnly(TimeOnly.FromDateTime(DateTime.Now)))
+</p>
+
+<h4>TimeOnly Nullable</h4>
+<p>
+    Null:@(rpc.GetTimeOnly(null) is null)
+</p>
+
+<h4>MultiParams</h4>
+<p>
+    @(rpc.MultiParams(true, 123, null))
+</p>
